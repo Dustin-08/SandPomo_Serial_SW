@@ -1,4 +1,4 @@
-<img width="300" alt="image" src="https://github.com/user-attachments/assets/563c61a7-784e-4a27-8e98-1ee02a315ac9" /># SandPomo_Serial_SW
+# SandPomo_Serial_SW
 
 ## University of Ulsan OSS TermProject Back Up && Test Repo
 
