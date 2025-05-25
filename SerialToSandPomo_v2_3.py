@@ -76,25 +76,33 @@ refresh_button.grid(row=1, column=3, padx=5, pady=5)
 connect_button = tk.Button(root, text="연결", command=connect_serial)
 connect_button.grid(row=2, column=1, padx=5, pady=5, sticky="ew", columnspan=2)
 
-session_label = tk.Label(root, text="Session 시간 입력:")
-session_label.grid(row=3, column=0, padx=5, pady=5)
+# Session과 Break 입력을 위한 중앙 Frame 생성
+input_frame = tk.Frame(root)
+input_frame.grid(row=3, column=0, columnspan=4, pady=20)
+
+# Session 입력 (라벨과 Entry를 나란히 배치)
+session_label = tk.Label(input_frame, text="Session 시간 입력:")
+session_label.grid(row=0, column=0, padx=5, pady=5)
 session_var = tk.StringVar()
 session_var.trace_add('write', validate_entries)
-session_entry = tk.Entry(root, width=10, textvariable=session_var, justify="center")
-session_entry.grid(row=3, column=1, padx=5, pady=5)
+session_entry = tk.Entry(input_frame, width=10, textvariable=session_var, justify="center")
+session_entry.grid(row=0, column=1, padx=5, pady=5)
 
-break_label = tk.Label(root, text="Break 시간 입력:")
-break_label.grid(row=4, column=0, padx=5, pady=5)
+# Break 입력 (라벨과 Entry를 나란히 배치)
+break_label = tk.Label(input_frame, text="Break 시간 입력:")
+break_label.grid(row=1, column=0, padx=5, pady=5)
 break_var = tk.StringVar()
 break_var.trace_add('write', validate_entries)
-break_entry = tk.Entry(root, width=10, textvariable=break_var, justify="center")
-break_entry.grid(row=4, column=1, padx=5, pady=5)
+break_entry = tk.Entry(input_frame, width=10, textvariable=break_var, justify="center")
+break_entry.grid(row=1, column=1, padx=5, pady=5)
 
-send_button = tk.Button(root, text="전송", command=send_time, state="disabled")
-send_button.grid(row=5, column=1, padx=5, pady=10, columnspan=2)
+# 전송 버튼도 Frame 안에 중앙 배치
+send_button = tk.Button(input_frame, text="전송", command=send_time, state="disabled")
+send_button.grid(row=2, column=0, columnspan=2, padx=5, pady=10)
 
+# 상태 라벨
 status_label = tk.Label(root, text="", fg="blue")
-status_label.grid(row=6, column=0, columnspan=4, pady=10)
+status_label.grid(row=4, column=0, columnspan=4, pady=10)
 
 ser = None
 
