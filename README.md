@@ -21,8 +21,13 @@
 
 ### 토글로 포트 확인 및 연결 코드
 - 중앙 정렬로 이미지 변경 예정
-<img width="576" alt="Image" src="https://github.com/user-attachments/assets/bab34f7b-ed27-4bfc-8d5e-e15930e3967d" />
-<img width="570" alt="Image" src="https://github.com/user-attachments/assets/6970968d-7332-4e26-9826-9e322172a612" />
+#### Mac OS
+<img width="317" alt="Image" src="https://github.com/user-attachments/assets/bab34f7b-ed27-4bfc-8d5e-e15930e3967d" />
+<img width="317" alt="Image" src="https://github.com/user-attachments/assets/6970968d-7332-4e26-9826-9e322172a612" />
+
+#### Window OS
+<img width="317" alt="Image" src="https://github.com/user-attachments/assets/ddc4e915-1094-478c-902b-7268169c51dc" />
+
 
 ## 02) 사용법
 1. 다운로드 후 관련 라이브러리 설치
@@ -53,3 +58,27 @@ pyinstaller --onefile --windowed myapp.py
 4. 실행 파일 위치
 변환이 끝나면, dist 폴더 안에 myapp.exe 파일이 생성됩니다.
 이 파일을 더블 클릭하면 파이썬이 설치되어 있지 않은 PC에서도 바로 실행됩니다.
+
+5. if Windows OS에서 빌드 후 에러가 날시
+myapp.spec 파일 내에 hiddenimports에 라이브러리 추가
+```spec
+a = Analysis(
+    ['myapp.py'],
+    pathex=[],
+    binaries=[],
+    datas=[],
+    hiddenimports=['serial', 'serial.tools', 'serial.tools.list_ports'],  # 이 줄 추가/수정
+    hookspath=[],
+    hooksconfig={},
+    runtime_hooks=[],
+    excludes=[],
+    win_no_prefer_redirects=False,
+    win_private_assemblies=False,
+    cipher=block_cipher,
+    noarchive=False,
+)
+```
+6. 후에 spec 파일 기반으로 앱 빌드
+```bash
+pyinstaller myapp.spec
+```
