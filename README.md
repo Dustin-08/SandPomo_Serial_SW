@@ -21,8 +21,13 @@
 
 ### 토글로 포트 확인 및 연결 코드
 - 중앙 정렬로 이미지 변경 예정
-<img width="576" alt="Image" src="https://github.com/user-attachments/assets/bab34f7b-ed27-4bfc-8d5e-e15930e3967d" />
-<img width="570" alt="Image" src="https://github.com/user-attachments/assets/6970968d-7332-4e26-9826-9e322172a612" />
+#### Mac OS
+<img width="317" alt="Image" src="https://github.com/user-attachments/assets/bab34f7b-ed27-4bfc-8d5e-e15930e3967d" />
+<img width="317" alt="Image" src="https://github.com/user-attachments/assets/6970968d-7332-4e26-9826-9e322172a612" />
+
+#### Window OS
+<img width="317" alt="Image" src="https://github.com/user-attachments/assets/ddc4e915-1094-478c-902b-7268169c51dc" />
+
 
 ## 02) 사용법
 1. 다운로드 후 관련 라이브러리 설치
