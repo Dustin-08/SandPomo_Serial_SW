@@ -1,0 +1,3 @@
+([('SerialToSandPomo_v2_3_1',
+   '/Users/dustin08/Documents/Github/SandPomo_Serial_SW/dist/SerialToSandPomo_v2_3_1',
+   'EXECUTABLE')],)
