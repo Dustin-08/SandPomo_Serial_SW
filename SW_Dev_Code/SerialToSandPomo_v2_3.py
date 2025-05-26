@@ -43,7 +43,7 @@ def send_time():
         return
     try:
         # "Session,Break\n" 형식으로 전송
-        ser.write(f"{session},{brk}\n".encode())
+        ser.write(f"{session} {brk}\n".encode())
         status_label.config(text=f"Session: {session}분, Break: {brk}분 전송 완료", fg="yellow")
     except Exception as e:
         status_label.config(text=f"전송 실패: {e}", fg="red")
